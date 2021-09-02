@@ -1,10 +1,12 @@
-<?php namespace App\Controllers;
-
-use App\Libraries\IP2Proxy_lib;
-
+<?php
 define('IP2PROXY_DATABASE', 'LOCATION OF YOUR BIN FILE');
 
-class IP2Proxy_test extends BaseController {
+class IP2Proxy_test extends CI_Controller {
+    function __construct() {
+        parent::__construct();
+        $this->load->library('ip2proxy_lib');
+    }
+
     public function index() {
         $ipx = new IP2Proxy_lib();
 

@@ -1,4 +1,5 @@
-<?php namespace App\Libraries;
+<?php
+(defined('BASEPATH') || defined('SYSPATH')) or die('No direct access allowed.');
 
 // Web Service Settings
 if(!defined('IP2PROXY_API_KEY')) {
@@ -13,123 +14,76 @@ if(!defined('IP2PROXY_USESSL')) {
 	define('IP2PROXY_USESSL', false);
 }
 
-require_once('ip2proxy/class.IP2Proxy.php');
+require_once('ip2proxy/Database.php');
+require_once('ip2proxy/WebService.php');
 
 class IP2Proxy_lib {
 	private $database;
 
 	protected static $ip2proxy;
 
+	public function __construct() {
+		self::$ip2proxy = new \IP2Proxy\Database(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
+	}
+
 	public function getCountryShort($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$countryShort = self::$ip2proxy->getCountryShort(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $countryShort;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::COUNTRY_CODE);
 	}
 
 	public function getCountryLong($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$countryLong = self::$ip2proxy->getCountryLong(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $countryLong;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::COUNTRY_NAME);
 	}
 
 	public function getRegion($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$region = self::$ip2proxy->getRegion(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $region;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::REGION_NAME);
 	}
 
 	public function getCity($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$city = self::$ip2proxy->getCity(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $city;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::CITY_NAME);
 	}
 
 	public function getISP($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$isp = self::$ip2proxy->getISP(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $isp;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::ISP);
 	}
 
 	public function getDomain($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$domain = self::$ip2proxy->getDomain(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $domain;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::DOMAIN_NAME);
 	}
 
 	public function getUsageType($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$usageType = self::$ip2proxy->getUsageType(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $usageType;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::USAGE_TYPE);
 	}
 
 	public function getProxyType($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$proxyType = self::$ip2proxy->getProxyType(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $proxyType;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::PROXY_NAME);
 	}
 
 	public function getASN($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$asn = self::$ip2proxy->getASN(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $asn;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::ASN);
 	}
 
 	public function getAS($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$as = self::$ip2proxy->getAS(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $as;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::_AS);
 	}
 
 	public function getLastSeen($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$lastSeen = self::$ip2proxy->getLastSeen(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $lastSeen;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::LAST_SEEN);
 	}
 
 	public function getThreat($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$threat = self::$ip2proxy->getThreat(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $threat;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::THREAT);
+	}
+
+	public function getProvider($ip=NULL) {
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::PROVIDER);
 	}
 
 	public function isProxy($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$isProxy = self::$ip2proxy->isProxy(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $isProxy;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::IS_PROXY);
 	}
 
 	public function getAll($ip=NULL) {
-		self::$ip2proxy = new \IP2Proxy\Database();
-		self::$ip2proxy->open(IP2PROXY_DATABASE, \IP2Proxy\Database::FILE_IO);
-		$all = self::$ip2proxy->getAll(self::getIP($ip));
-		self::$ip2proxy->close();
-		return $all;
+		return self::$ip2proxy->lookup(self::getIP($ip), \IP2Proxy\Database::ALL);
 	}
 
 	public function getWebService($ip=NULL) {
