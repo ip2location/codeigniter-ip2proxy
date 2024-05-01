@@ -1,0 +1,219 @@
+{
+    "ip": "187.190.158.144",
+    "country_code": "MX",
+    "country_name": "Mexico",
+    "region_name": "Tamaulipas",
+    "district": "Reynosa",
+    "city_name": "Reynosa",
+    "latitude": 26.083309,
+    "longitude": -98.283373,
+    "zip_code": "88780",
+    "time_zone": "-06:00",
+    "asn": "17072",
+    "as": "Latin American and Caribbean IP Address Regional Registry",
+    "isp": "Total Play Telecomunicaciones SA de CV",
+    "domain": "totalplay.com.mx",
+    "net_speed": "DSL",
+    "idd_code": "52",
+    "area_code": "0899",
+    "weather_station_code": "MXTS0103",
+    "weather_station_name": "Reynosa",
+    "mcc": "334",
+    "mnc": "010/090",
+    "mobile_brand": "AT&T",
+    "elevation": 39,
+    "usage_type": "ISP/MOB",
+    "address_type": "Unicast",
+    "ads_category": "IAB19-18",
+    "ads_category_name": "Internet Technology",
+    "continent": {
+        "name": "North America",
+        "code": "NA",
+        "hemisphere": [
+            "north",
+            "west"
+        ],
+        "translation": {
+            "lang": "en",
+            "value": "North America"
+        }
+    },
+    "country": {
+        "name": "Mexico",
+        "alpha3_code": "MEX",
+        "numeric_code": 484,
+        "demonym": "Mexicans",
+        "flag": "https://cdn.ip2location.io/assets/img/flags/mx.png",
+        "capital": "Mexico City",
+        "total_area": 1964375,
+        "population": 128932753,
+        "currency": {
+            "code": "MXN",
+            "name": "Mexican Peso",
+            "symbol": "$"
+        },
+        "language": {
+            "code": "ES",
+            "name": "Spanish"
+        },
+        "tld": "mx",
+        "translation": {
+            "lang": "en",
+            "value": "Mexico"
+        }
+    },
+    "region": {
+        "name": "Tamaulipas",
+        "code": "MX-TAM",
+        "translation": {
+            "lang": "en",
+            "value": "Tamaulipas"
+        }
+    },
+    "city": {
+        "name": "Reynosa",
+        "translation": {
+            "lang": null,
+            "value": null
+        }
+    },
+    "time_zone_info": {
+        "olson": "America/Monterrey",
+        "current_time": "2024-05-01T08:11:40-06:00",
+        "gmt_offset": -21600,
+        "is_dst": false,
+        "sunrise": "05:55",
+        "sunset": "19:05"
+    },
+    "geotargeting": {
+        "metro": null
+    },
+    "is_proxy": false,
+    "proxy": {
+        "last_seen": 0,
+        "proxy_type": "-",
+        "threat": "-",
+        "provider": "-",
+        "is_vpn": false,
+        "is_tor": false,
+        "is_data_center": false,
+        "is_public_proxy": false,
+        "is_web_proxy": false,
+        "is_web_crawler": false,
+        "is_residential_proxy": false,
+        "is_consumer_privacy_network": false,
+        "is_enterprise_private_network": false,
+        "is_spammer": false,
+        "is_scanner": false,
+        "is_botnet": false
+    }
+}{
+    "ip": "187.190.158.144",
+    "country_code": "MX",
+    "country_name": "Mexico",
+    "region_name": "Tamaulipas",
+    "district": "Reynosa",
+    "city_name": "Reynosa",
+    "latitude": 26.083309,
+    "longitude": -98.283373,
+    "zip_code": "88780",
+    "time_zone": "-06:00",
+    "asn": "17072",
+    "as": "Latin American and Caribbean IP Address Regional Registry",
+    "isp": "Total Play Telecomunicaciones SA de CV",
+    "domain": "totalplay.com.mx",
+    "net_speed": "DSL",
+    "idd_code": "52",
+    "area_code": "0899",
+    "weather_station_code": "MXTS0103",
+    "weather_station_name": "Reynosa",
+    "mcc": "334",
+    "mnc": "010/090",
+    "mobile_brand": "AT&T",
+    "elevation": 39,
+    "usage_type": "ISP/MOB",
+    "address_type": "Unicast",
+    "ads_category": "IAB19-18",
+    "ads_category_name": "Internet Technology",
+    "continent": {
+        "name": "North America",
+        "code": "NA",
+        "hemisphere": [
+            "north",
+            "west"
+        ],
+        "translation": {
+            "lang": "en",
+            "value": "North America"
+        }
+    },
+    "country": {
+        "name": "Mexico",
+        "alpha3_code": "MEX",
+        "numeric_code": 484,
+        "demonym": "Mexicans",
+        "flag": "https://cdn.ip2location.io/assets/img/flags/mx.png",
+        "capital": "Mexico City",
+        "total_area": 1964375,
+        "population": 128932753,
+        "currency": {
+            "code": "MXN",
+            "name": "Mexican Peso",
+            "symbol": "$"
+        },
+        "language": {
+            "code": "ES",
+            "name": "Spanish"
+        },
+        "tld": "mx",
+        "translation": {
+            "lang": "en",
+            "value": "Mexico"
+        }
+    },
+    "region": {
+        "name": "Tamaulipas",
+        "code": "MX-TAM",
+        "translation": {
+            "lang": "en",
+            "value": "Tamaulipas"
+        }
+    },
+    "city": {
+        "name": "Reynosa",
+        "translation": {
+            "lang": null,
+            "value": null
+        }
+    },
+    "time_zone_info": {
+        "olson": "America/Monterrey",
+        "current_time": "2024-05-01T08:11:40-06:00",
+        "gmt_offset": -21600,
+        "is_dst": false,
+        "sunrise": "05:55",
+        "sunset": "19:05"
+    },
+    "geotargeting": {
+        "metro": null
+    },
+    "is_proxy": false,
+    "proxy": {
+        "last_seen": 0,
+        "proxy_type": "-",
+        "threat": "-",
+        "provider": "-",
+        "is_vpn": false,
+        "is_tor": false,
+        "is_data_center": false,
+        "is_public_proxy": false,
+        "is_web_proxy": false,
+        "is_web_crawler": false,
+        "is_residential_proxy": false,
+        "is_consumer_privacy_network": false,
+        "is_enterprise_private_network": false,
+        "is_spammer": false,
+        "is_scanner": false,
+        "is_botnet": false
+    }
+}
